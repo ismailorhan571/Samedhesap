@@ -1,15 +1,10 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-# Sayfa Ayarları (Siyah Beyaz tema için koyu mod)
-st.set_page_config(
-    page_title="Kara Kartal Pro",
-    page_icon="🔢",
-    layout="centered",
-    initial_sidebar_state="collapsed",
-)
+# 1. Sayfa Ayarları
+st.set_page_config(page_title="Kara Kartal Pro", page_icon="🦅", layout="centered")
 
-# --- BEŞİKTAŞ ÖZEL HTML & JS KODU ---
+# 2. HTML ve JS Kodu (Hesap Makinesi Gövdesi)
 calc_html = """
 <!DOCTYPE html>
 <html>
@@ -19,7 +14,7 @@ calc_html = """
         body { background-color: #000; font-family: -apple-system, sans-serif; display: flex; justify-content: center; padding-top: 5px; overflow: hidden; margin: 0; }
         .calc-body { width: 330px; background-color: #000; border-radius: 20px; padding: 10px; position: relative; }
         
-        /* BEŞİKTAŞ LOGOSU: Sol Üstte Tam Konumlanmış */
+        /* BJK Logo - Sol Üstte Çerçevesiz */
         .bjk-logo {
             position: absolute; top: 10px; left: 10px;
             width: 55px; height: 55px;
@@ -41,14 +36,14 @@ calc_html = """
         }
         button:active { opacity: 0.6; transform: scale(0.92); }
         
-        /* Renkler */
-        .num { background-color: #333333; color: white; } /* Sayılar Koyu Gri (Siyah Beyaz Denge) */
-        .op { background-color: #a5a5a5; color: black; font-size: 18px; } /* İşlemler Gri (Görünürlük) */
-        .func { background-color: #FFFFFF; color: black; font-size: 18px; } /* Fonksiyonlar Beyaz */
+        /* BJK Renk Şeması */
+        .num { background-color: #333333; color: white; }
+        .op { background-color: #a5a5a5; color: black; font-size: 22px; } 
+        .func { background-color: #FFFFFF; color: black; font-size: 18px; } 
         .spec { background-color: #1a1a1a; color: #FFFFFF; font-size: 14px; border: 1px solid #444; }
         .equal { background-color: #FFFFFF; color: #000; font-size: 24px; }
         
-        /* Üçüncü Renk (Kırmızı - Feda Ruhu) */
+        /* Kırmızı Detaylar (Feda) */
         .feda { background-color: #E30613 !important; color: white !important; }
     </style>
 </head>
@@ -109,24 +104,22 @@ calc_html = """
 </html>
 """
 
-# Arayüz Başlığı (Parlak Beyaz Efektli)
+# 3. YENİ SİYAH VE PARLAK BAŞLIK
+# Renk siyah (#000) yapıldı, ancak görünmesi için beyaz parlama (text-shadow) eklendi.
 st.markdown(
     """
-    <h1 style='text-align: center; color: white; font-family: sans-serif; text-shadow: 0 0 15px white, 0 0 30px #a5a5a5; border-bottom: 2px solid white; padding-bottom: 10px; margin-bottom: 5px;'>
+    <h2 style='text-align: center; color: #000; font-family: sans-serif; 
+               text-shadow: 0 0 10px #fff, 0 0 20px #fff; 
+               background: rgba(255,255,255,0.1); border-radius: 10px; padding: 5px;'>
         🦅 KARA KARTAL PRO 🦅
-    </h1>
-    """,
-    unsafe_allow_html=True,
+    </h2>
+    """, 
+    unsafe_allow_html=True
 )
 
-# Hesap Makinesi Bileşeni
+# 4. Hesap Makinesi
 components.html(calc_html, height=480)
 
-# Alt İmza (BJK Ruhuna Uygun)
-st.markdown(
-    """
-    <h3 style='text-align: center; color: white; margin-top: 0;'>Geliştiren: İsmail Orhan</h3>
-    <p style='text-align: center; color: #888; font-size: 14px;'>🦅 Bursa / Gemlik - Feda Ruhunun Hesap Makinesi</p>
-    """,
-    unsafe_allow_html=True,
-)
+# 5. Alt İmza
+st.markdown("<h3 style='text-align: center; color: white; margin-top: 0;'>Geliştiren: İsmail Orhan</h3>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #888; font-size: 14px;'>🦁 Bursa / Gemlik - Kara Kartal Ruhu</p>", unsafe_allow_html=True)
