@@ -122,4 +122,5 @@ components.html(calc_html, height=480)
 
 # 5. Alt İmza
 st.markdown("<h3 style='text-align: center; color: white; margin-top: 0;'>Geliştiren: İsmail Orhan</h3>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #888; font-size: 14px;'>🦁 Bursa / Gemlik - Kara Kartal Ruhu</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #888; font-size: 14px;'>Kara Kartal Ruhu İsmail Abisinden Samed kardeşime özel 
+</p>", unsafe_allow_html=True)
